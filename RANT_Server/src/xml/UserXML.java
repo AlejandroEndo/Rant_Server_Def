@@ -63,7 +63,7 @@ public class UserXML {
 		XML[] hijos = usuarios.getChildren("usuario");
 		for (int i = 0; i < hijos.length; i++) {
 			if (hijos[i].getString("usuario").equals(usuario)) {
-				if (hijos[i].getString("contasena").equals(contrasena)) {
+				if (hijos[i].getString("contrasena").equals(contrasena)) {
 					estadoUsuario = 1;
 				} else {
 					estadoUsuario = 2;

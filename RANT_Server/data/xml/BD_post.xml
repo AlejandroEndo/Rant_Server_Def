@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <post>
-  <post descripcion="post de prueba" fecha="0-0-0-0" nombreUsuario="endo " ruta="data/endo/2.jpg"/>
-  <post descripcion="Texto del post" fecha="0-0-0-0" nombreUsuario="bry " ruta="data/bry/2.jpg"/>
+  <post descripcion="de serie a meme..." fecha="0-0-0-0" nombreUsuario="endo " ruta="data/endo/momo.jpg"/>
+  <post descripcion="yaaaaas" fecha="0-0-0-0" nombreUsuario="bry " ruta="data/bry/chi.jpg"/>
+  <post descripcion="amo esta serie" fecha="0-0-0-0" nombreUsuario="brayan " ruta="data/bry/lanayru.jpg"/>
+  <post descripcion="aaaaaa" fecha="0-0-0-0" nombreUsuario="a " ruta="data/a/a.jpg"/>
 </post>

@@ -107,7 +107,6 @@ public class Server extends Thread implements Observer {
 				((ControlCliente) observado).enviarMensaje("signup_resp:" + (resultadoAgregar == true ? 1 : 0));
 			}
 			if (notificacion.contains("post_req")) {
-
 				((ControlCliente) observado).enviarMensaje(posteos);
 			}
 			if (notificacion.contains("cliente_no_disponible")) {

@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
+import java.net.SocketException;
 import java.util.Observable;
 import java.util.Observer;
 import serializable.Post;
@@ -33,7 +34,9 @@ public class ControlCliente extends Observable implements Runnable {
 		while (disponible) {
 			try {
 				recibirMensaje();
-			} catch (IOException | ClassNotFoundException e) {
+			} catch (IOException e) {
+				e.printStackTrace();
+			} catch (ClassNotFoundException e) {
 				e.printStackTrace();
 			}
 		}
@@ -45,7 +48,7 @@ public class ControlCliente extends Observable implements Runnable {
 	 * @throws IOException
 	 * @throws ClassNotFoundException
 	 */
-	private void recibirMensaje() throws IOException, ClassNotFoundException {
+	private void recibirMensaje() throws IOException, ClassNotFoundException, SocketException {
 		ObjectInputStream ois = new ObjectInputStream(s.getInputStream());
 		Object o = ois.readObject();
 		if (o instanceof Post) {
@@ -98,9 +101,10 @@ public class ControlCliente extends Observable implements Runnable {
 	 */
 	public void enviarMensaje(Object mensaje) {
 		try {
-			ObjectOutputStream dos = new ObjectOutputStream(s.getOutputStream());
-			dos.writeObject(mensaje);
+			ObjectOutputStream ous = new ObjectOutputStream(s.getOutputStream());
+			ous.writeObject(mensaje);
 			System.out.println("MENSAJE ENVIADO <" + mensaje + ">");
+			ous.flush();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

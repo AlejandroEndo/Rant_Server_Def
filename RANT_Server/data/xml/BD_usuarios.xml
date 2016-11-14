@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <usuarios>
   <usuario contrasena="a" usuario="a"/>
+  <usuario contrasena="aaa" usuario="endo"/>
+  <usuario contrasena="bry" usuario="bry"/>
+  <usuario contrasena="bry" usuario="brayan"/>
+  <usuario contrasena="e" usuario="e"/>
+  <usuario contrasena="s" usuario="s"/>
 </usuarios>
