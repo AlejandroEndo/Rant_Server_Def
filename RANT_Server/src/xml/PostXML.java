@@ -21,7 +21,7 @@ public class PostXML {
 	public PostXML(PApplet app) {
 		this.app = app;
 		try {
-			posts = app.loadXML("data/xml/BD_post.xml");
+			posts = app.loadXML("data/BD_post.xml");
 		} catch (Exception e) {
 			posts = app.parseXML("<post></post>");
 		}
@@ -44,7 +44,7 @@ public class PostXML {
 		XML hijo = app.parseXML("<post nombreUsuario=\"" + nombre + " \" descripcion=\"" + descripcion + "\" ruta=\""
 				+ rutaImagen + "\" fecha=\"" + fecha + "\"></post>");
 		posts.addChild(hijo);
-		app.saveXML(posts, "data/xml/BD_post.xml");
+		app.saveXML(posts, "data/BD_post.xml");
 		return true;
 	}
 

@@ -15,7 +15,7 @@ public class MensajeXML {
 		this.app = app;
 
 		try {
-			usuarios = app.loadXML("data/xml/BD_mensajes.xml");
+			usuarios = app.loadXML("data/BD_mensajes.xml");
 		} catch (Exception e) {
 			usuarios = app.parseXML("<mensajes></mensajes>");
 		}
@@ -32,7 +32,7 @@ public class MensajeXML {
 	public void agregarMensaje(String usuario, String mensaje) {
 		XML hijo = app.parseXML("<mensaje usuario=\"" + usuario + "\">" + mensaje + "</mensaje>");
 		usuarios.addChild(hijo);
-		app.saveXML(usuarios, "data/xml/BD_mensajes.xml");
+		app.saveXML(usuarios, "data/BD_mensajes.xml");
 	}
 
 }

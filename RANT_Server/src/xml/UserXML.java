@@ -14,7 +14,7 @@ public class UserXML {
 	public UserXML(PApplet app) {
 		this.app = app;
 		try {
-			usuarios = app.loadXML("data/xml/BD_usuarios.xml");
+			usuarios = app.loadXML("data/BD_usuarios.xml");
 		} catch (Exception e) {
 			usuarios = app.parseXML("<usuarios></usuarios>");
 		}
@@ -43,7 +43,7 @@ public class UserXML {
 			XML hijo = app
 					.parseXML("<usuario usuario=\"" + usuario + "\" contrasena=\"" + contrasena + "\"></usuario>");
 			usuarios.addChild(hijo);
-			app.saveXML(usuarios, "data/xml/BD_usuarios.xml");
+			app.saveXML(usuarios, "data/BD_usuarios.xml");
 			agregado = true;
 		}
 		return agregado;
