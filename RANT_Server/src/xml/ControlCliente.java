@@ -79,7 +79,7 @@ public class ControlCliente extends Observable implements Runnable {
 	 */
 	private String guardarArchivo(String user, byte[] buf, String nombre) throws IOException {
 		try {
-			File archivo = new File("data/" + user + "/" + nombre);
+			File archivo = new File("data/xml/" + user + "/" + nombre);
 			archivo.createNewFile();
 			FileOutputStream salida = new FileOutputStream(archivo);
 			salida.write(buf);
@@ -105,7 +105,7 @@ public class ControlCliente extends Observable implements Runnable {
 			ObjectOutputStream ous = new ObjectOutputStream(s.getOutputStream());
 			ous.writeObject(mensaje);
 			System.out.println("MENSAJE ENVIADO <" + mensaje + ">");
-			ous.flush();
+			//ous.flush();
 			// ous.close();
 		} catch (IOException e) {
 			e.printStackTrace();
