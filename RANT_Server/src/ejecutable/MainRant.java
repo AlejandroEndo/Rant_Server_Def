@@ -19,7 +19,7 @@ public class MainRant extends PApplet {
 	public static void main(String[] args) {
 		PApplet.main("ejecutable.MainRant");
 	}
-
+	
 	@Override
 	public void setup() {
 		server = new Server(this);
