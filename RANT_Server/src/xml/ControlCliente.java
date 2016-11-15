@@ -65,6 +65,7 @@ public class ControlCliente extends Observable implements Runnable {
 			System.out.println("MENSAJE RECIBIDO <" + mensaje + ">");
 			jefe.update(this, mensaje);
 		}
+		//ois.close();
 	}
 
 	/**
@@ -76,7 +77,7 @@ public class ControlCliente extends Observable implements Runnable {
 	 * @return null
 	 * @throws IOException
 	 */
-	private String guardarArchivo(String nombre, byte[] buf, String user) throws IOException {
+	private String guardarArchivo(String user, byte[] buf, String nombre) throws IOException {
 		try {
 			File archivo = new File("data/" + user + "/" + nombre);
 			archivo.createNewFile();
@@ -105,6 +106,7 @@ public class ControlCliente extends Observable implements Runnable {
 			ous.writeObject(mensaje);
 			System.out.println("MENSAJE ENVIADO <" + mensaje + ">");
 			ous.flush();
+			// ous.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
